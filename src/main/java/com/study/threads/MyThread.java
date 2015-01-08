@@ -14,13 +14,14 @@ package com.study.threads;
  */
 public class MyThread extends Thread{
     public void run(){
-        System.out.println(Thread.currentThread().getName()+":MyThread running");
+        System.out.println(Thread.currentThread().getName()+":State:"+Thread.currentThread().getState());
     }
 
     public static void main(String[] args){
         System.out.println(Thread.currentThread().getName()+":Main Thread running");
         for(int i=0;i<10;i++) {
             MyThread myThread = new MyThread();
+            System.out.println(myThread.getName()+":State:"+myThread.getState());
             myThread.start();
         }
 
